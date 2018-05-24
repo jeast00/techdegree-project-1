@@ -11,21 +11,21 @@ var quotes = [
     quote : "Alrighty then!",
     source : "Ace Ventura",
     citation : "Ace Ventura, Pet Detective",
-    year :
+    year : false
   },
 
   {
     quote : "If you're going through Hell, keep going.",
     source : "Winston Churchill",
-    citation : "",
-    year :
+    citation : false,
+    year : false
   },
 
   {
     quote : "Accept the challenges so that you can feel the exhilaration of victory.",
     source : "George S. Patton",
-    citation : "",
-    year :
+    citation : false,
+    year : false
   },
 
   {
@@ -38,11 +38,21 @@ var quotes = [
   {
     quote : "It is during our darkest moments that we must focus to see the light.",
     source : "Aristotle",
-    citation : "",
-    year :
+    citation : false,
+    year : false
   }
 
 ];
+
+function getRandomQuote() {
+    return Math.floor(Math.random() * quotes.length);
+}
+
+function printQuote() {
+  var randomQuote = getRandomQuote();
+}
+
+
 
 
 
