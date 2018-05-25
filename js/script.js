@@ -50,10 +50,16 @@ function getRandomQuote() {
 function printQuote() {
     var quoteInfo = getRandomQuote();
     var html = '<p class="quote">' + quoteInfo.quote + '</p>';
-        html += '<p class="source">' + quoteInfo.source + '</p>';
-
-  // '<span class="citation">' + quoteInfo.citation + '</span>'
-  // '<span class="year">' + quoteInfo.year + '</span>'
+        html += '<p class="source">' + quoteInfo.source +
+        if(quoteInfo.citation === undefined){
+          console.log("unable to find citation or citation was not applicable");
+        }else if(quoteInfo.year === NaN) {
+          console.log("unable to find year or year was not applicable");
+        }else {
+  '<p span class="citation">' + quoteInfo.citation.push(quoteInfo) + '</span>'
+  '<span class="year">' + quoteInfo.year + '</span>'
+  '</p>';
+}
 
     var quoteboxDiv = document.getElementById("quote-box");
     quoteboxDiv.innerHTML = html;
