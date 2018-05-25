@@ -44,6 +44,7 @@ var quotes = [
   quotes object array
 */
 function getRandomQuote() {
+    //Return a random quote from the quotes Object array
     return quotes[Math.floor(Math.random() * quotes.length)];
 }
 
@@ -53,6 +54,7 @@ function getRandomQuote() {
 */
 
 function printQuote() {
+    //Create the variable to hold the random quote
     var quoteInfo = getRandomQuote();
 
     //Provide an html output variable combining all strings into one string
