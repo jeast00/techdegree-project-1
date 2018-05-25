@@ -44,6 +44,9 @@ var quotes = [
   }
 ];
 
+//Print the first random quote to the screen before the button is clicked
+printQuote();
+
 /*
   Create a function named getRandomQuote that returns a random quote from the
   quotes object array
