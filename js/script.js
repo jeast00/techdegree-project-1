@@ -36,6 +36,11 @@ var quotes = [
     quote : "Ay, Caramba!",
     source : "Bart Simpson",
     citation : "The Simpsons"
+  },
+  {
+    quote : "What the deuce?",
+    source : "Stewie Griffin",
+    citation : "Family Guy"
   }
 ];
 
@@ -63,10 +68,10 @@ function printQuote() {
 
     //Provide 'if' statements for the optional properties added to the html output string
         if(quoteInfo.citation !== undefined) {
-          htmlQuoteOutput += '<span class="citation">' + quoteInfo.citation + '</span> ';
+          htmlQuoteOutput += '<span class="citation">' + quoteInfo.citation + '</span>';
         }
         if(quoteInfo.year !== undefined) {
-          htmlQuoteOutput += '<span class="year">' + quoteInfo.year + '</span> ';
+          htmlQuoteOutput += '<span class="year">' + quoteInfo.year + '</span>';
         }
         htmlQuoteOutput += '</p>';
 
