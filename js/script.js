@@ -9,9 +9,10 @@ document.getElementById('loadQuote').addEventListener("click", printQuote, false
 */
 var quotes = [
   {
-    quote : "Alrighty then!",
+    quote : "Is your number still 911? ..Alrighty then!",
     source : "Ace Ventura",
-    citation : "Ace Ventura, Pet Detective"
+    citation : "Ace Ventura: Pet Detective",
+    year : 1994
   },
   {
     quote : "If you're going through Hell, keep going.",
@@ -22,7 +23,7 @@ var quotes = [
     source : "George S. Patton"
   },
   {
-    quote : "I'll be back.",
+    quote : "Hasta la vista, baby.",
     source : "The Terminator",
     citation : "Terminator 2: Judgement Day",
     year : 1991
@@ -30,6 +31,11 @@ var quotes = [
   {
     quote : "It is during our darkest moments that we must focus to see the light.",
     source : "Aristotle"
+  },
+  {
+    quote : "Ay, Caramba!",
+    source : "Bart Simpson",
+    citation : "The Simpsons"
   }
 ];
 
@@ -38,8 +44,7 @@ var quotes = [
   quotes object array
 */
 function getRandomQuote() {
-    var randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-    return randomQuote;
+    return quotes[Math.floor(Math.random() * quotes.length)];
 }
 
 /*
@@ -49,18 +54,20 @@ function getRandomQuote() {
 
 function printQuote() {
     var quoteInfo = getRandomQuote();
-    var html = '<p class="quote">' + quoteInfo.quote + '</p>';
-        html += '<p class="source">' + quoteInfo.source +
-        if(quoteInfo.citation === undefined){
-          console.log("unable to find citation or citation was not applicable");
-        }else if(quoteInfo.year === NaN) {
-          console.log("unable to find year or year was not applicable");
-        }else {
-  '<p span class="citation">' + quoteInfo.citation.push(quoteInfo) + '</span>'
-  '<span class="year">' + quoteInfo.year + '</span>'
-  '</p>';
-}
 
-    var quoteboxDiv = document.getElementById("quote-box");
-    quoteboxDiv.innerHTML = html;
+    //Provide an html output variable combining all strings into one string
+    var htmlQuoteOutput = '<p class="quote">' + quoteInfo.quote + '</p>' +
+                          '<p class="source">' + quoteInfo.source + ' ';
+
+    //Provide 'if' statements for the optional properties added to the html output string
+        if(quoteInfo.citation !== undefined) {
+          htmlQuoteOutput += '<span class="citation">' + quoteInfo.citation + '</span> ';
+        }
+        if(quoteInfo.year !== undefined) {
+          htmlQuoteOutput += '<span class="year">' + quoteInfo.year + '</span> ';
+        }
+        htmlQuoteOutput += '</p>';
+
+    //Print the quote to the screen
+    document.getElementById("quote-box").innerHTML = htmlQuoteOutput;
 }
