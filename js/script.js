@@ -5,7 +5,9 @@ document.getElementById('loadQuote').addEventListener("click", printQuote, false
 /*
   Create an object array named quotes that holds 5 quote objects and
   each quote has a quote property, a source property, a citation
-  property (optional) and a year property (optional).
+  property (optional), a year property (optional) and a tag property
+  (for Extra Credit)
+  })
 */
 var quotes = [
   {
@@ -89,7 +91,26 @@ function printQuote() {
 }
 
 /*
+  Create a function that creates a random color
+*/
+function randomColor() {
+  return Math.floor(Math.random() * 256);
+}
+
+/*
+  Create a function that creates a random background color for the body of the screen
+*/
+function changeBackgroundColor() {
+  var redColor = randomColor();
+  var blueColor = randomColor();
+  var greenColor = randomColor();
+  var allColors = 'rgb(' + redColor + ',' + blueColor + ',' + greenColor + ')';
+    document.body.style.backgroundColor = allColors;
+}
+
+/*
   Use the printQuote() function to call and print the first random quote
   before the button is clicked
 */
 printQuote();
+changeBackgroundColor();
