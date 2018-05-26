@@ -12,40 +12,45 @@ var quotes = [
     quote : "Is your number still 911? ..Alrighty then!",
     source : "Ace Ventura",
     citation : "Ace Ventura: Pet Detective",
-    year : 1994
+    year : 1994,
+    tag : "Humor, Comedy, Movies"
   },
   {
     quote : "If you're going through Hell, keep going.",
-    source : "Winston Churchill"
+    source : "Winston Churchill",
+    tag : "Motivational"
   },
   {
     quote : "Accept the challenges so that you can feel the exhilaration of victory.",
-    source : "George S. Patton"
+    source : "George S. Patton",
+    tag : "Motivational, Inspirational"
   },
   {
     quote : "Hasta la vista, baby.",
     source : "The Terminator",
     citation : "Terminator 2: Judgement Day",
-    year : 1991
+    year : 1991,
+    tag : "Movies, Action"
   },
   {
     quote : "It is during our darkest moments that we must focus to see the light.",
-    source : "Aristotle"
+    source : "Aristotle",
+    tag : "Motivational"
   },
   {
     quote : "Ay, Caramba!",
     source : "Bart Simpson",
-    citation : "The Simpsons"
+    citation : "The Simpsons",
+    tag : "Humor, TV, Cartoon"
   },
   {
     quote : "What the deuce?",
     source : "Stewie Griffin",
-    citation : "Family Guy"
+    citation : "Family Guy",
+    tag : "Humor, TV, Cartoon"
   }
 ];
 
-//Print the first random quote to the screen before the button is clicked
-printQuote();
 
 /*
   Create a function named getRandomQuote that returns a random quote from the
@@ -77,7 +82,14 @@ function printQuote() {
           htmlQuoteOutput += '<span class="year">' + quoteInfo.year + '</span>';
         }
         htmlQuoteOutput += '</p>';
+        htmlQuoteOutput += '<p class="tags">' + quoteInfo.tag + '</p>';
 
-    //Print the quote to the screen
+    //Provide a document.getElementById code to have the quote print to the screen
     document.getElementById("quote-box").innerHTML = htmlQuoteOutput;
 }
+
+/*
+  Use the printQuote() function to call and print the first random quote
+  before the button is clicked
+*/
+printQuote();
