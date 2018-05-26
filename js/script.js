@@ -88,6 +88,7 @@ function printQuote() {
 
     //Provide a document.getElementById code to have the quote print to the screen
     document.getElementById("quote-box").innerHTML = htmlQuoteOutput;
+    changeBackgroundColor();
 }
 
 /*
@@ -113,4 +114,3 @@ function changeBackgroundColor() {
   before the button is clicked
 */
 printQuote();
-changeBackgroundColor();
