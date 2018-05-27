@@ -2,8 +2,8 @@
 /*
   Create an object array named quotes that holds 5 quote objects and
   each quote has a quote property, a source property, a citation
-  property (optional), a year property (optional) and a tag property
-  (for Extra Credit)
+  property (optional), a year property (optional) and
+  a tag property(***Extra Credit***)
   })
 */
 var quotes = [
@@ -67,15 +67,14 @@ setTimeInterval();
 */
 function getRandomQuote() {
     //Return a random quote from the quotes Object array
-    var randomQuoteObject = Math.floor(Math.random() * quotes.length);
-    return quotes[randomQuoteObject];
+    return quotes[Math.floor(Math.random() * quotes.length)];
+
 }
 
 /*
   Create a function named printQuote that calls the function getRandomQuote,
   add it to a variable, and print out the quote.
 */
-
 function printQuote() {
     //Create the variable to hold the random quote
     var quoteInfo = getRandomQuote();
@@ -105,14 +104,16 @@ function printQuote() {
 }
 
 /*
-  Create a function that creates a random color
+  Create a function that creates a random number and call it in the
+  changeBackgroundColor() function
 */
 function randomColor() {
   return Math.floor(Math.random() * 256);
 }
 
 /*
-  Create a function that creates a random background color for the body of the screen
+  Create a function that creates a random background color for the body of
+  the screen and call the randomColor() function (***Extra Credit***)
 */
 function changeBackgroundColor() {
   var redColor = randomColor();
@@ -125,9 +126,10 @@ function changeBackgroundColor() {
 /*
   Create a function that creates a duration of time in which will automatically
   change the quote and the background color without clicking the button
+  (***Extra Credit***)
 */
 function setTimeInterval() {
-  return setInterval(printQuote, 15000);
+  return setInterval(printQuote, 11000);
 }
 
 
