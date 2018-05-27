@@ -17,7 +17,7 @@ var quotes = [
   {
     quote : "If you're going through Hell, keep going.",
     source : "Winston Churchill",
-    tag : "Motivational"
+    tag : "Motivational, Inspirational"
   },
   {
     quote : "Accept the challenges so that you can feel the exhilaration of victory.",
@@ -34,7 +34,7 @@ var quotes = [
   {
     quote : "It is during our darkest moments that we must focus to see the light.",
     source : "Aristotle",
-    tag : "Motivational"
+    tag : "Motivational, Inspirational"
   },
   {
     quote : "Ay, Caramba!",
@@ -49,6 +49,9 @@ var quotes = [
     tag : "Humor, TV, Cartoon"
   }
 ];
+
+//Create an empty array to hold quotes that have already been on the screen
+var shownQuote = [];
 
 /*
   Use the printQuote() function to call and print the first random quote
@@ -66,9 +69,25 @@ setTimeInterval();
   quotes object array.
 */
 function getRandomQuote() {
-    //Return a random quote from the quotes Object array.
-    return quotes[Math.floor(Math.random() * quotes.length)];
-}
+    //Create a variable that holds a random quote.
+    var randomQuote = Math.floor(Math.random() * quotes.length);
+
+    //Create a variable that does not duplicate random quotes when shown on screen.
+    var removeQuote = quotes.splice(randomQuote, 1)[0];
+    //Use the push method to add the shown quote into the new array.
+    shownQuote.push(removeQuote);
+    /*
+      Provide an 'if' statement that checks to see if the quotes array is empty.
+      Add the shownQuote array back to the quotes array and reset the
+      shownQuote array.
+    */
+      if(quotes.length === 0) {
+        quotes = shownQuote;
+        shownQuote = [];
+      }
+      //Return the random quote.
+    return removeQuote;
+    }
 
 /*
   Create a function named printQuote that calls the function getRandomQuote,
@@ -128,7 +147,7 @@ function changeBackgroundColor() {
   (***Extra Credit***).
 */
 function setTimeInterval() {
-  return setInterval(printQuote, 11000);
+  return setInterval(printQuote, 3000);
 }
 
 
