@@ -52,21 +52,21 @@ var quotes = [
 
 /*
   Use the printQuote() function to call and print the first random quote
-  before the button is clicked
+  before the button is clicked.
 */
 printQuote();
 
 /*
-  Call the setTimeInterval() function to start the timer
+  Call the setTimeInterval() function to start the timer.
 */
 setTimeInterval();
 
 /*
   Create a function named getRandomQuote that returns a random quote from the
-  quotes object array
+  quotes object array.
 */
 function getRandomQuote() {
-    //Return a random quote from the quotes Object array
+    //Return a random quote from the quotes Object array.
     return quotes[Math.floor(Math.random() * quotes.length)];
 }
 
@@ -75,14 +75,14 @@ function getRandomQuote() {
   add it to a variable, and print out the quote.
 */
 function printQuote() {
-    //Create the variable to hold the random quote
+    //Create the variable to hold the random quote.
     var quoteInfo = getRandomQuote();
 
-    //Provide an html output variable combining all strings into one string
+    //Provide an html output variable combining all strings into one string.
     var htmlQuoteOutput = '<p class="quote">' + quoteInfo.quote + '</p>' +
                           '<p class="source">' + quoteInfo.source + ' ';
 
-    //Provide 'if' statements for the optional properties added to the html output string
+    //Provide 'if' statements for the optional properties added to the html output string.
         if(quoteInfo.citation !== undefined) {
           htmlQuoteOutput += '<span class="citation">' + quoteInfo.citation + '</span>';
         }
@@ -92,19 +92,19 @@ function printQuote() {
         htmlQuoteOutput += '</p>';
         htmlQuoteOutput += '<p class="tags">' + quoteInfo.tag + '</p>';
 
-    //Provide a document.getElementById code to have the quote print to the screen
+    //Provide a document.getElementById code to have the quote print to the screen.
     document.getElementById("quote-box").innerHTML = htmlQuoteOutput;
 
     /*
       Call the changeBackgroundColor() function in the printQuote() function
-      to change the background color each time a new quote appears
+      to change the background color each time a new quote appears.
     */
     changeBackgroundColor();
 }
 
 /*
   Create a function that creates a random number and call it in the
-  changeBackgroundColor() function
+  changeBackgroundColor() function.
 */
 function randomColor() {
   return Math.floor(Math.random() * 256);
@@ -112,7 +112,7 @@ function randomColor() {
 
 /*
   Create a function that creates a random background color for the body of
-  the screen and call the randomColor() function (***Extra Credit***)
+  the screen and call the randomColor() function (***Extra Credit***).
 */
 function changeBackgroundColor() {
   var redColor = randomColor();
@@ -125,7 +125,7 @@ function changeBackgroundColor() {
 /*
   Create a function that creates a duration of time in which will automatically
   change the quote and the background color without clicking the button
-  (***Extra Credit***)
+  (***Extra Credit***).
 */
 function setTimeInterval() {
   return setInterval(printQuote, 11000);
