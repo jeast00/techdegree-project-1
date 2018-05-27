@@ -1,6 +1,3 @@
-// event listener to respond to "Show another quote" button clicks
-// when user clicks anywhere on the button, the "printQuote" function is called
-document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
 /*
   Create an object array named quotes that holds 5 quote objects and
@@ -53,6 +50,19 @@ var quotes = [
   }
 ];
 
+/*
+  Use the printQuote() function to call and print the first random quote
+  before the button is clicked
+*/
+printQuote();
+
+/*
+  Call the setTimeInterval() function
+*/
+setTimeInterval();
+
+
+
 
 /*
   Create a function named getRandomQuote that returns a random quote from the
@@ -60,7 +70,8 @@ var quotes = [
 */
 function getRandomQuote() {
     //Return a random quote from the quotes Object array
-    return quotes[Math.floor(Math.random() * quotes.length)];
+    var randomQuoteObject = Math.floor(Math.random() * quotes.length);
+    return quotes[randomQuoteObject];
 }
 
 /*
@@ -88,7 +99,14 @@ function printQuote() {
 
     //Provide a document.getElementById code to have the quote print to the screen
     document.getElementById("quote-box").innerHTML = htmlQuoteOutput;
+
+    /*
+      Call the changeBackgroundColor() function in the printQuote() function
+      to change the background color each time a new quote appears
+    */
     changeBackgroundColor();
+
+
 }
 
 /*
@@ -110,7 +128,14 @@ function changeBackgroundColor() {
 }
 
 /*
-  Use the printQuote() function to call and print the first random quote
-  before the button is clicked
+  Create a function that creates a duration of time in which will automatically
+  change the quote and the background color without clicking the button
 */
-printQuote();
+function setTimeInterval() {
+  return setInterval(printQuote, 10000);
+
+}
+
+// event listener to respond to "Show another quote" button clicks
+// when user clicks anywhere on the button, the "printQuote" function is called
+document.getElementById('loadQuote').addEventListener("click", printQuote, false);
