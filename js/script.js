@@ -47,6 +47,23 @@ var quotes = [
     source : "Stewie Griffin",
     citation : "Family Guy",
     tag : "Humor, TV, Cartoon"
+  },
+  {
+    quote : "Even a clock that does not work is right twice a day.",
+    source : "Polish Proverb",
+    tag : "Philisophical"
+  },
+  {
+    quote : "Beer is the cause and solution to all of life's problems.",
+    source : "Homer Simpson",
+    tag : "Humor, TV, Cartoon"
+  },
+  {
+    quote : "It takes more strength of character to withstand good fortune than bad",
+    source : "La Rochefoucauld",
+    citation : "Reflections",
+    year : 1665,
+    tag : "Prosperity"
   }
 ];
 
@@ -147,7 +164,7 @@ function changeBackgroundColor() {
   (***Extra Credit***).
 */
 function setTimeInterval() {
-  return setInterval(printQuote, 3000);
+  return setInterval(printQuote, 11000);
 }
 
 
