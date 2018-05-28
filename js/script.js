@@ -67,9 +67,6 @@ var quotes = [
   }
 ];
 
-//Create an empty array to hold quotes that have already been on the screen
-var shownQuote = [];
-
 /*
   Use the printQuote() function to call and print the first random quote
   before the button is clicked.
@@ -87,23 +84,7 @@ setTimeInterval();
 */
 function getRandomQuote() {
     //Create a variable that holds a random quote.
-    var randomQuote = Math.floor(Math.random() * quotes.length);
-
-    //Create a variable that does not duplicate random quotes when shown on screen.
-    var removeQuote = quotes.splice(randomQuote, 1)[0];
-    //Use the push method to add the shown quote into the new array.
-    shownQuote.push(removeQuote);
-    /*
-      Provide an 'if' statement that checks to see if the quotes array is empty.
-      Add the shownQuote array back to the quotes array and reset the
-      shownQuote array.
-    */
-      if(quotes.length === 0) {
-        quotes = shownQuote;
-        shownQuote = [];
-      }
-      //Return the random quote.
-    return removeQuote;
+    return quotes[Math.floor(Math.random() * quotes.length)];
     }
 
 /*
@@ -126,7 +107,6 @@ function printQuote() {
           htmlQuoteOutput += '<span class="year">' + quoteInfo.year + '</span>';
         }
         htmlQuoteOutput += '</p>';
-        htmlQuoteOutput += '<p class="tags">' + quoteInfo.tag + '</p>';
 
     //Provide a document.getElementById code to have the quote print to the screen.
     document.getElementById("quote-box").innerHTML = htmlQuoteOutput;
