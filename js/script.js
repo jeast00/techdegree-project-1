@@ -106,6 +106,7 @@ function printQuote() {
         if(quoteInfo.year !== undefined) {
           htmlQuoteOutput += '<span class="year">' + quoteInfo.year + '</span>';
         }
+        htmlQuoteOutput += '<p class="tags">' + quoteInfo.tag + '</p>';
         htmlQuoteOutput += '</p>';
 
     //Provide a document.getElementById code to have the quote print to the screen.
