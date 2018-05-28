@@ -83,7 +83,7 @@ setTimeInterval();
   quotes object array.
 */
 function getRandomQuote() {
-    //Create a variable that holds a random quote.
+    //Return the random quote
     return quotes[Math.floor(Math.random() * quotes.length)];
     }
 
